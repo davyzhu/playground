@@ -7,7 +7,7 @@ void main() {
     var d2 = {1, 2, 3};
     var d3 = {1};
     var d4 = {1, 2, 3};
-    expect(allDiff([d1, d2, d3, d4]), false);
+    expect(AllDiff([d1, d2, d3, d4]).check(), false);
   });
 
   test('all diff #2', () async {
@@ -15,12 +15,17 @@ void main() {
     var d2 = {1, 2, 3};
     var d3 = {1};
     var d4 = {1, 2, 3};
-    expect(allDiff([d1, d2, d3, d4]), true);
+    expect(AllDiff([d1, d2, d3, d4]).check(), true);
   });
 
   test('all diff #3', () async {
     var d1 = {1, 2, 3};
     var d2 = {1, 2, 3};
-    expect(allDiff([d1, d2]), true);
+    expect(AllDiff([d1, d2]).check(), true);
+  });
+  test('all diff #4', () async {
+    var d1 = {1};
+    var d2 = {1};
+    expect(AllDiff([d1, d2]).check(), false);
   });
 }
