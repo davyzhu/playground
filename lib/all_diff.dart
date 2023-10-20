@@ -57,6 +57,7 @@ class AllDiff {
     } else {
       remains[index] = false;
       var value = domainsCopy[index].single;
+      removedValues.add(value);
       domainsCopy[index].clear();
       for (var i = 0; i < domainsCopy.length; i++) {
         if (remains[i]) {
