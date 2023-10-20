@@ -28,4 +28,10 @@ void main() {
     var d2 = {1};
     expect(AllDiff([d1, d2]).check(), false);
   });
+  test('all diff #5', () async {
+    var d1 = {1};
+    var d2 = {1, 2};
+    var d3 = {1, 2, 3};
+    expect(AllDiff([d1, d2, d3]).check(), true);
+  });
 }
